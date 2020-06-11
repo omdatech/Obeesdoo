@@ -15,8 +15,8 @@
                       <label for="info_session_confirmed">
                           <input type="checkbox"
                                  name="info_session_confirmed"
-                                 t-att="{'required': 'required'} if info_session_required else {}"
-                                 t-attf-value="#{data_policy_approved or ''}"/>
+                                 t-att-required="info_session_required"
+                                 t-att-checked="data_policy_approved"/>
                           <t t-raw="info_session_text"/>
                       </label>
                   </div>
