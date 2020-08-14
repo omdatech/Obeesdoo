@@ -224,7 +224,7 @@
             <t t-set="highlight_class" t-value="'panel-warning' if not has_enough_workers else 'panel-default'"/>
             <t t-set="need_super" t-value="shift.task_type_id.super_only" />
             <t t-set="user_super" t-value="request.env.user.partner_id.super" />
-            <div t-att-class="'card mb-4 %s' % highlight_class" t-if="not need_super or need_super and (user_super)">
+            <div t-att-class="'card mb-4 %s' % highlight_class" t-if="not need_super or (need_super and user_super)">
                 <div t-att-class="'card-header %s clearfix' % highlight_header_class">
                     <div class="pull-left">
                         <span t-field="shift.start_time"/>
@@ -235,8 +235,6 @@
                         <t t-esc="count"/>
                         space(s)
                     </div>
-                    <t t-esc="need_super" />
-                                <t t-esc="user_super" />
                     <div class="badge badge-secondary pull-right" t-if="count == 0">
                         full
                     </div>
