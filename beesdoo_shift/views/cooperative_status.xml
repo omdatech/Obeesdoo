@@ -204,6 +204,27 @@
         <field name="domain">[('is_worker', '=', True)]</field>
     </record>
 
+    <record id="action_worker_view_kanban" model="ir.actions.act_window.view">
+        <field name="sequence" eval="0"/>
+        <field name="view_mode">kanban</field>
+        <field name="view_id" ref="base.res_partner_kanban_view"/>
+        <field name="act_window_id" ref="action_worker"/>
+    </record>
+
+     <record id="action_worker_view_tree" model="ir.actions.act_window.view">
+        <field name="sequence" eval="1"/>
+        <field name="view_mode">tree</field>
+        <field name="view_id" ref="base.view_partner_tree"/>
+        <field name="act_window_id" ref="action_worker"/>
+    </record>
+
+     <record id="action_worker_view_tree" model="ir.actions.act_window.view">
+        <field name="sequence" eval="2"/>
+        <field name="view_mode">form</field>
+        <field name="view_id" ref="base.view_partner_form"/>
+        <field name="act_window_id" ref="action_worker"/>
+    </record>
+
     <record model="ir.actions.act_window" id="action_journal">
         <field name="name">Counter Journal</field>
         <field name="res_model">beesdoo.shift.journal</field>
